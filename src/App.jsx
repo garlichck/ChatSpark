@@ -1,37 +1,35 @@
+// src/App.jsx
 import React from 'react';
 import ChatSpark from './components/ChatSpark';
+import './components/ChatSpark.css';
 
 function App() {
-
   const handleSend = (text) => {
-    console.log('[User Message]', text);
-    // You could also send this to an API or analytics platform
-    // fetch('/api/log', { method: 'POST', body: JSON.stringify({ type: 'user', text }) });
+    console.log('[User]', text);
   };
 
   const handleReply = (text) => {
-    console.log('[Bot Reply]', text);
-    // Similarly, you could store replies or analyze them
+    console.log('[Bot]', text);
   };
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', marginTop: '50px' }}>
+    <div style={{ maxWidth: '600px', margin: '50px auto' }}>
+      <h1 style={{ textAlign: 'center' }}>ChatSpark Demo</h1>
       <ChatSpark
+        placeholder="Try asking something..."
+        botReply={`Here is a **markdown** reply with a code block:
+
+\`\`\`js
+console.log('Hello from ChatSpark!');
+\`\`\``}
         onSend={handleSend}
         onReply={handleReply}
-        initialMessages={[
-          { sender: 'bot', text: 'Welcome to ChatSpark!' },
-          { sender: 'user', text: 'Hi there!' }
-        ]}
         theme={{
-          userBg: '#e0ffe0',
-          botBg: '#fff3cd',
+          userBg: '#e0f7fa',
+          botBg: '#f1f8e9',
           borderRadius: '10px',
           fontFamily: 'Courier New, monospace'
         }}
-        botReply="This is a custom reply from ChatSpark!"
-        placeholder="Start chatting here..."
-        disabled={false}
       />
     </div>
   );
