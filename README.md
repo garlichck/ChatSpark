@@ -23,3 +23,25 @@ A modern, customizable React component for building interactive AI chat interfac
 
 ```bash
 npm install chatspark-ui
+
+## 🚀 Usage Sample
+
+import React from 'react';
+import ChatSpark from 'chatspark-ui';
+import 'chatspark-ui/dist/ChatSpark.css';
+
+
+function App() {
+  return (
+    <div style={{ maxWidth: '600px', margin: '0 auto', padding: '2rem' }}>
+      <h1>ChatSpark Demo</h1>
+      <ChatSpark
+        placeholder="Ask something..."
+        botReply={`Here is a **markdown** reply:\n\n\`\`\`js\nconsole.log('Hello from ChatSpark!');\n\`\`\``}
+      />
+    </div>
+  );
+}
+
+export default App;
+

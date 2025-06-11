@@ -1,20 +1,21 @@
 {
   "name": "chatspark-ui",
-  "version": "1.0.1",
+  "version": "1.0.6",
   "description": "A customizable React component for building AI chat UIs with markdown and streaming support.",
   "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "files": [
     "dist",
-    "src"
+    "dist/ChatSpark.css"
   ],
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "prepublishOnly": "npm run build"
+    "copy-css": "copy src\\components\\ChatSpark.css dist\\ChatSpark.css",
+    "prepublishOnly": "npm run build && npm run copy-css"
   },
   "keywords": [
     "react",
