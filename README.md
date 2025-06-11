@@ -4,6 +4,8 @@ A modern, customizable React component for building interactive AI chat interfac
 
 🔗 [Live Demo](https://garlichck.github.io/ChatSpark/)
 
+[![npm](https://img.shields.io/npm/v/chatspark-ui.svg)](https://www.npmjs.com/package/chatspark-ui)
+
 
 ---
 
