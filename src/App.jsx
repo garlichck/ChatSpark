@@ -15,7 +15,7 @@ function App() {
   };
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', marginTop: '50px' }}>
+    <div style={{ display: 'flex', justifyContent: 'center' }}>
       <ChatSpark
         onSend={handleSend}
         onReply={handleReply}

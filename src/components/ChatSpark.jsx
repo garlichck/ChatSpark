@@ -1,4 +1,3 @@
-// src/components/ChatSpark.jsx
 import React, { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
@@ -15,8 +14,8 @@ function ChatSpark({
   theme = {
     userBg: '#daf1ff',
     botBg: '#eee',
-    borderRadius: '6px',
-    fontFamily: 'Arial, sans-serif'
+    borderRadius: '18px',
+    fontFamily: 'Segoe UI, sans-serif'
   },
   onSend = () => { },
   onReply = () => { }
@@ -104,11 +103,24 @@ function ChatSpark({
           <div
             key={idx}
             className={`chat-message ${msg.sender.includes('bot') ? 'bot' : 'user'}`}
-            style={messageStyle(msg.sender.includes('bot') ? 'bot' : 'user')}
           >
-            <ReactMarkdown components={renderers}>{msg.text}</ReactMarkdown>
+            <div
+              className="bubble"
+              style={messageStyle(msg.sender.includes('bot') ? 'bot' : 'user')}
+            >
+              <ReactMarkdown components={renderers}>{msg.text}</ReactMarkdown>
+            </div>
           </div>
         ))}
+        {isStreaming && (
+          <div className="chat-message bot">
+            <div className="bubble typing-indicator">
+              <span className="dot"></span>
+              <span className="dot"></span>
+              <span className="dot"></span>
+            </div>
+          </div>
+        )}
       </div>
       <div className="chat-input">
         <input
